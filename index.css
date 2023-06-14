@@ -1,0 +1,736 @@
+/* -------------------- Ressources -------------------- */
+
+@font-face {
+	font-family: regular;
+	src: url(fonts/Audrey-Normal.otf);
+}
+
+@font-face {
+	font-family: italic;
+	src: url(fonts/Audrey-NormalOblique.otf);
+}
+
+@font-face {
+	font-family: smallcaps;
+	src: url(fonts/Copperplate\ Gothic\ Std\ 29\ BC.otf);
+}
+
+@font-face {
+	font-family: title;
+	src: url(fonts/Bee-Three.ttf);
+}
+
+@font-face {
+	font-family: wide;
+	src: url(fonts/VelodromaBasic-Wide.otf);
+}
+
+:root {
+	--main-color: #d2d2d2;
+	--accent-color: white;
+	--low-color: #a0a0a0;
+	--high-color: white;
+}
+
+/* -------------------- Setup -------------------- */
+
+.preload * {
+	transition: none !important;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+	transition: color ease 0.4s;
+}
+
+body {
+	background-color: black;
+	overflow: hidden;
+}
+
+.ground {
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
+.ground img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all ease 0.5s;
+}
+
+.fade {
+	opacity: 0;
+}
+
+/* -------------------- Navbar -------------------- */
+
+.navbar {
+	height: 10vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	font-size: min(2.5vw, 18px);
+	position: absolute;
+	z-index: 1;
+}
+
+.logo,
+.menu {
+	height: 100%;
+	width: 7%;
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.logo {
+	color: rgba(255, 255, 255, 0.286);
+	justify-content: left;
+	margin-left: 3vw;
+	font-family: wide;
+	cursor: pointer;
+	scale: 0.9;
+	transition: all ease 0.4s;
+}
+
+.logo:hover {
+	color: var(--accent-color);
+	scale: 1.1;
+}
+
+.menu {
+	justify-content: right;
+	margin-right: 3vw;
+}
+
+.menu_ico {
+	cursor: pointer;
+	opacity: 70%;
+	width: max(2.5vw, 25px);
+}
+
+.nav_links {
+	color: var(--main-color);
+	font-family: smallcaps;
+	height: 100%;
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav_links div {
+	width: 40%;
+	margin-left: 25%;
+}
+
+.main_indicator {
+	width: 10%;
+	margin: 1% 10%;
+	transition: all ease 0.4s;
+	transform: translateX(0vw);
+	color: var(--accent-color);
+}
+
+.certificats_indicator {
+	width: 15%;
+	margin: 1% 8%;
+	transition: all ease 0.4s;
+	transform: translateX(11vw);
+	color: var(--accent-color);
+}
+
+.contact_indicator {
+	width: 10%;
+	margin: 1% 8.5%;
+	transition: all ease 0.4s;
+	transform: translateX(22.5vw);
+	color: var(--accent-color);
+}
+
+.nav_links ul {
+	width: 100%;
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+}
+
+.nav_links .links {
+	margin: 0 max(5%, 2vw);
+	transition: all ease 0.4s;
+	cursor: pointer;
+}
+
+.links a {
+	text-decoration: none;
+	color: var(--main-color);
+	transition: all ease 0.4s;
+}
+
+.links:hover {
+	color: var(--accent-color);
+	scale: 1.5;
+}
+
+.links a:hover {
+	color: var(--accent-color);
+}
+
+.link_no_display {
+	display: none;
+}
+
+.active_link {
+	transition: all ease 0.4s;
+	scale: 1.2;
+}
+
+.active_link a {
+	text-decoration: none;
+	transition: all ease 0.4s;
+	color: var(--accent-color);
+}
+
+.search_button {
+	text-align: right;
+	width: 22%;
+	height: min(45%, 40px);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: black 1px 1px 5px;
+	position: relative;
+	right: 5%;
+}
+
+.search_text {
+	color: var(--main-color);
+	background-color: rgba(0, 0, 0, 0);
+	width: 100%;
+	height: 100%;
+	border: none;
+	padding-left: 10%;
+}
+
+.search_text::placeholder {
+	font-size: max(1vw, 10px);
+}
+
+.search_text:focus::placeholder {
+	color: rgba(0, 0, 0, 0);
+}
+
+.search_text:focus {
+	outline: none;
+	color: var(--accent-color);
+}
+
+.search_ico_button {
+	background-color: transparent;
+	cursor: pointer;
+	width: 20%;
+	border: none;
+	margin: 0 3%;
+}
+
+.search_ico {
+	width: 65%;
+	margin-top: 13%;
+	opacity: 70%;
+}
+
+/* -------------------- Page body -------------------- */
+
+.main,
+.certificats,
+.contact {
+	position: absolute;
+	transition: all ease 0.6s;
+}
+
+.top_no_fade {
+	opacity: 1;
+	visibility: visible;
+	translate: 0% 0%;
+}
+
+.back_fade_r {
+	opacity: 0;
+	visibility: hidden;
+	translate: 80% 0%;
+}
+
+.back_fade_l {
+	opacity: 0;
+	visibility: hidden;
+	translate: -80% 0%;
+}
+
+/* -------------------- Main -------------------- */
+
+.main {
+	padding-top: 10vh;
+	width: 100vw;
+	color: var(--accent-color);
+}
+
+.general {
+	height: 85%;
+	display: flex;
+	transition: opacity ease 0.4s;
+}
+
+.bienvenu {
+	padding: 8%;
+	padding-top: 6%;
+	width: 40%;
+}
+
+.date {
+	font-family: smallcaps;
+}
+
+.title {
+	font-family: wide;
+	font-size: min(3.5vw, 40px);
+	margin-top: min(10%, 15px);
+	margin-bottom: min(10%, 20px);
+}
+
+.introtext {
+	font-family: smallcaps;
+	font-size: min(2.3vw, 20px);
+}
+
+/* -------------------- Mairies -------------------- */
+
+.mairies {
+	margin-top: 20px;
+	width: 60%;
+	height: 60%;
+	display: flex;
+	flex-direction: row;
+	overflow: scroll;
+	scroll-behavior: smooth;
+	scrollbar-width: none;
+	scroll-snap-type: x mandatory;
+}
+
+.mairies div {
+	text-align: left;
+	display: flex;
+	scroll-snap-align: end;
+	scroll-snap-stop: always;
+}
+
+.mairies div p {
+	width: 30vw;
+	padding-top: 5vw;
+	padding-left: 20%;
+	font-family: title;
+	font-size: max(8vw, 60px);
+}
+
+.city {
+	color: rgba(0, 0, 0, 0);
+
+	-webkit-text-stroke: white 0.7px;
+}
+
+.city_link:hover {
+	cursor: pointer;
+}
+
+.active_city {
+	color: var(--accent-color);
+	-webkit-text-stroke: 0;
+}
+
+.subcity {
+	-webkit-text-stroke: 0;
+	margin-top: 4%;
+	color: var(--low-color);
+	display: flex;
+	flex-direction: column;
+	height: 12%;
+	justify-content: space-evenly;
+	padding-left: 40%;
+	width: 100%;
+	font-family: smallcaps;
+	font-size: min(2vw, 20px);
+}
+
+.active_data {
+	color: var(--accent-color);
+}
+
+/* -------------------- Connexion Section -------------------- */
+
+.connex_section button {
+	color: var(--main-color);
+	background: none;
+	background-color: rgba(0, 0, 0, 0.2);
+	width: min(15vw, 160px);
+	height: min(5vw, 50px);
+	position: fixed;
+	bottom: 7vh;
+	left: 4.2vw;
+	display: flex;
+	border: none;
+	transition: all ease 0.3s;
+	z-index: 1;
+}
+
+.connex_section button p {
+	font-family: wide;
+	font-size: min(1vw, 10px);
+	display: flex;
+	align-items: center;
+	margin-left: 5%;
+}
+
+.connex_section button:hover {
+	scale: 1.5;
+	cursor: pointer;
+	background-color: transparent;
+	box-shadow: rgba(255, 255, 255, 0.584) 0px 0px 1px;
+}
+
+.connex_section button:hover .vert {
+	color: green;
+}
+.connex_section button:hover .jaune {
+	color: yellow;
+}
+.connex_section button:hover .rouge {
+	color: red;
+}
+
+.flag {
+	cursor: pointer;
+	position: fixed;
+	bottom: 7.5vh;
+	right: 3.7vw;
+	width: min(4vw, 40px);
+	z-index: 1;
+}
+
+/* -------------------- Certificats -------------------- */
+
+.certificats {
+	height: 100vh;
+}
+
+.certif_general {
+	padding: 0 1vw;
+	width: 100vw;
+	height: 90%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.certif_general button {
+	width: 23%;
+	height: 20%;
+	background-color: rgba(0, 0, 0, 0);
+	border: 1px solid rgba(255, 255, 255, 0.493);
+	font-family: wide;
+	font-size: 1.5vw;
+	color: var(--accent-color);
+	transition: all ease 0.3s;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.certif_general button:hover {
+	cursor: pointer;
+	scale: 1.2;
+	font-size: 1.65vw;
+	background-color: rgba(0, 0, 0, 0.022);
+	border: none;
+	box-shadow: rgba(255, 255, 255, 0.584) 0px 0px 7px;
+}
+
+.certif_general button:hover .vert {
+	color: green;
+}
+.certif_general button:hover .jaune {
+	color: yellow;
+}
+.certif_general button:hover .rouge {
+	color: red;
+}
+
+/* -------------------- Popup -------------------- */
+
+.popup {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 150%;
+	left: 50%;
+	translate: -50% -50%;
+	transition: all ease 0.5s;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.active_popup {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	transition: all ease 0.5s;
+	opacity: 1;
+	z-index: 2;
+	visibility: visible;
+}
+
+.not_active_button {
+	opacity: 0;
+}
+
+.popup form {
+	position: absolute;
+	bottom: 10%;
+	right: 30%;
+	display: flex;
+	flex-direction: column;
+	background-color: rgba(0, 0, 0, 0);
+	width: 40%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	row-gap: 0.5vh;
+	border: 1px solid rgba(255, 255, 255, 0.493);
+	padding: 2vh 0;
+}
+
+.popup form input {
+	font-size: max(1.2vw, 10px);
+	color: var(--main-color);
+	padding: 0.5vw 2vw;
+	outline: none;
+}
+
+.popup form input:focus {
+	color: var(--accent-color);
+}
+
+.popup .date_format {
+	display: flex;
+	width: 60%;
+	justify-content: space-between;
+	align-items: center;
+	font-size: max(1.2vw, 10px);
+	color: rgba(255, 255, 255, 0.332);
+	background-color: rgba(255, 255, 255, 0.055);
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.493);
+	box-shadow: rgba(0, 0, 0, 0.584) 0px 0px 5px;
+	height: 10%;
+	padding: 0.5vw 1.5vw;
+	font-family: Arial;
+}
+
+.popup .date_format p {
+	margin-left: 0.4vw;
+}
+
+.popup .date_format input {
+	color: var(--main-color);
+	width: 55%;
+	padding: 2% 2%;
+	text-align: center;
+}
+
+.popup .date_format input:focus {
+	color: black;
+}
+
+.popup .radio {
+	width: 60%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.popup .radio div {
+	color: rgba(255, 255, 255, 0.332);
+	font-family: Arial;
+	font-size: max(1.2vw, 10px);
+	width: 100%;
+	display: inline-block;
+	text-align: center;
+}
+
+.popup .autopsie {
+	width: 60%;
+	height: 6.5%;
+	background-color: rgba(255, 255, 255, 0.055);
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.493);
+	box-shadow: rgba(0, 0, 0, 0.584) 0px 0px 5px;
+	color: rgba(255, 255, 255, 0.332);
+	font-family: Arial;
+	font-size: max(1.2vw, 10px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5vw 2vw;
+}
+
+.popup .radio div label {
+	margin-right: 1vw;
+}
+
+.popup form .text {
+	width: 60%;
+	height: 6.5%;
+	background-color: rgba(255, 255, 255, 0.055);
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.493);
+	box-shadow: rgba(0, 0, 0, 0.584) 0px 0px 5px;
+}
+
+.popup .control_buttons {
+	display: flex;
+	width: 60%;
+	height: 3vw;
+	justify-content: space-around;
+}
+
+.control_buttons .close {
+	color: var(--accent-color);
+	font-family: wide;
+	font-size: max(5.5px, 0.9vw);
+	padding: 0 5%;
+	background-color: rgba(255, 255, 255, 0.025);
+	border: 1px solid rgba(255, 255, 255, 0.493);
+	transition: all ease-out 0.2s;
+}
+
+.control_buttons .close:hover {
+	color: white;
+	background-color: rgb(217, 0, 0);
+	cursor: pointer;
+	border: 1px solid rgb(217, 0, 0);
+}
+
+.popup form .submit {
+	padding: 0 3%;
+	color: var(--accent-color);
+	font-family: wide;
+	font-size: max(5.5px, 0.9vw);
+	background-color: rgba(255, 255, 255, 0.025);
+	border: 1px solid rgba(255, 255, 255, 0.493);
+	transition: all ease-out 0.2s;
+}
+
+.popup form .submit:hover {
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}
+
+/* -------------------- Contact -------------------- */
+
+.contact {
+	height: 95vh;
+}
+
+.contact_general {
+	width: 100vw;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contact_general form {
+	font-size: max(1.2vw, 10px);
+	margin-top: 2%;
+	padding: 3% 0;
+	background-color: rgba(0, 0, 0, 0);
+	width: 50%;
+	height: 80%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	row-gap: 3vh;
+	border: 1px solid rgba(255, 255, 255, 0.493);
+	transition: all ease 0.5s;
+}
+
+.contact_general form p {
+	font-family: wide;
+	color: var(--accent-color);
+}
+
+.contact_general form input {
+	padding: 2vw 2vw;
+	font-size: 100%;
+	color: var(--main-color);
+}
+
+.contact_general form input:focus {
+	outline: none;
+	color: var(--accent-color);
+}
+
+.contact_general form .text {
+	width: 60%;
+	height: 6%;
+	background-color: rgba(255, 255, 255, 0.055);
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.493);
+	box-shadow: rgba(0, 0, 0, 0.584) 0px 0px 5px;
+}
+
+.contact_general form .cont_message {
+	margin-bottom: 0.5vh;
+	width: 60%;
+	height: 27%;
+	background-color: rgba(255, 255, 255, 0.055);
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.493);
+	box-shadow: rgba(0, 0, 0, 0.584) 0px 0px 5px;
+	padding: 2vw 2vw;
+	font-size: 100%;
+	color: var(--main-color);
+}
+
+.contact_general form .cont_message:focus {
+	outline: none;
+	color: var(--accent-color);
+}
+
+.contact_general form .submit {
+	color: var(--accent-color);
+	font-family: wide;
+	font-size: 1vw;
+	padding: 2%;
+	background-color: rgba(255, 255, 255, 0.025);
+	border: 1px solid rgba(255, 255, 255, 0.493);
+	transition: all ease-out 0.3s;
+}
+
+.contact_general form .submit:hover {
+	color: black;
+	background-color: white;
+	cursor: pointer;
+}

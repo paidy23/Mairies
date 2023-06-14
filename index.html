@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mairies du Sénégal</title>
+		<link rel="stylesheet" href="index.css" />
+
+	</head>
+	<body onload="landingpage()">
+	<div class="ground">
+		<img src="background/Dakar.jpg" class="ground_img fade"/>
+		<img src="background/Diourbel.jpg"  class="ground_img fade"/>
+		<img src="background/Fatick.jpg" class="ground_img fade"/>
+		<img src="background/Kaffrine.jpg" class="ground_img fade"/>
+		<img src="background/Kaolack.jpg" class="ground_img fade"/>
+		<img src="background/Kedougou.jpg" class="ground_img fade"/>
+		<img src="background/Kolda.jpg" class="ground_img fade"/>
+		<img src="background/Louga.jpg" class="ground_img fade"/>
+		<img src="background/Matam.jpg" class="ground_img fade"/>
+		<img src="background/Saint Louis.jpg" class="ground_img fade" />
+		<img src="background/Sedhiou.jpg" class="ground_img fade" />
+		<img src="background/Tambacounda.jpg" class="ground_img fade" />
+		<img src="background/Thies.jpg"  class="ground_img fade"/>
+		<img src="background/Ziginchor.jpg"  class="ground_img fade"/>
+	</div>	
+				<nav id="navbar" class="navbar"/>
+			<div id="logo" class="logo">GOAT GANG</div>
+			<div id="nav_links" class="nav_links">
+				<div>
+				<ul>
+					<li id="main_link" class="links"><a onclick="active_main()" id="main_atag"  >accueil</a></li>
+					<li id="certificats_link" class="links"><a  onclick="active_certificats()" id="certificats_atag" >certificats</a></li>
+					<li id="contact_link" class="links"><a onclick="active_contact()">contact</a></li>
+				</ul>
+				<hr id="link_indicator" class="main_indicator">
+				</div>
+				<form class="search_button">
+					<input type="search" class="search_text" placeholder="Recherche" required />
+					<button type="submit" class="search_ico_button">
+						<img class="search_ico" src="icons/search.svg" />
+					</button>
+				</form>
+			</div>
+			<div id="menu" class="menu">
+				<img class="menu_ico" src="icons/menu.svg"/>
+			</div>
+		</nav>
+
+	<div class="page_body" id="page_body">
+		<div id="main" class="main">
+			<div id="general" class="general top_no_fade">
+				<div id="bienvenu" class="bienvenu">
+					<div class="date" id="date">
+						date
+					</div>
+					<div class="title" id="title">
+						<span style="color: green; text-shadow: black 1px 1px 5px">
+							Mairies
+						</span>
+						<span style="color: yellow; text-shadow: black 1px 1px 5px">
+							Du
+						</span>
+						<span style="color: red; text-shadow: black 1px 1px 4px">
+							Senegal
+						</span>
+					</div>
+					<div class="introtext" id="introtext">
+						Bienvenu sur le site officiel <br />
+						des mairies du Sénégal <br /><br />Bonne visite !
+					</div>
+				</div>
+				<div id="mairies" class="mairies">
+					<div id="dakar city" class="dakar city">
+						<p>
+							<span id="city_link" class="city_link">Dakar</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="dak_naiss" class="data">
+										23</span
+									></span
+								>
+								<span
+									>mariages<span id="dak_mari" class="data">
+										34</span
+									></span
+								>
+								<span
+									>total<span id="dak_tot" class="data">
+										27</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="diourbel" class="diourbel city">
+						<p>
+							<span class="city_link">Diourbel</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="dio_naiss" class="data">
+										28</span
+									></span
+								>
+								<span
+									>mariages<span id="dio_mari" class="data">
+										10</span
+									></span
+								>
+								<span
+									>total<span id="dio_tot" class="data">
+										43</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="fatick" class="fatick city">
+						<p>
+							<span class="city_link">Fatick</span>
+
+							<span class="subcity">
+								<span
+									>naissances<span id="fat_naiss" class="data">
+										38</span
+									></span
+								>
+								<span
+									>mariages<span id="fat_mari" class="data">
+										82</span
+									></span
+								>
+								<span
+									>total<span id="fat_tot" class="data">
+										46</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="kaffrine" class="kaffrine city">
+						<p>
+							<span class="city_link">Kaffrine</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="kaf_naiss" class="data">
+										12</span
+									></span
+								>
+								<span
+									>mariages<span id="kaf_mari" class="data">
+										78</span
+									></span
+								>
+								<span
+									>total<span id="kaf_tot" class="data">
+										80</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="kaolack" class="kaolack city">
+						<p>
+							<span class="city_link">Kaolack</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="kao_naiss" class="data">
+										27</span
+									></span
+								>
+								<span
+									>mariages<span id="kao_mari" class="data">
+										10</span
+									></span
+								>
+								<span
+									>total<span id="kao_tot" class="data">
+										32</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="kedougou" class="kedougou city">
+						<p>
+							<span class="city_link">Kedougou</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="ked_naiss" class="data">
+										29</span
+									></span
+								>
+								<span
+									>mariages<span id="ked_mari" class="data">
+										42</span
+									></span
+								>
+								<span
+									>total<span id="ked_tot" class="data">
+										71</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="kolda" class="kolda city">
+						<p>
+							<span class="city_link">Kolda</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="kol_naiss" class="data">
+										29</span
+									></span
+								>
+								<span
+									>mariages<span id="kol_mari" class="data">
+										75</span
+									></span
+								>
+								<span
+									>total<span id="kol_tot" class="data">
+										91</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="louga " class="louga city">
+						<p>
+							<span class="city_link">Louga</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="lou_naiss" class="data">
+										63</span
+									></span
+								>
+								<span
+									>mariages<span id="lou_mari" class="data">
+										12</span
+									></span
+								>
+								<span
+									>total<span id="lou_tot" class="data">
+										79</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="matam" class="matam city">
+						<p>
+							<span class="city_link">Matam</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="mat_naiss" class="data">
+										78</span
+									></span
+								>
+								<span
+									>mariages<span id="mat_mari" class="data">
+										55</span
+									></span
+								>
+								<span
+									>total<span id="mat_tot" class="data">
+										11</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="saint_louis" class="saint_louis city">
+						<p>
+							<span class="city_link">Saint Louis</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="stl_naiss" class="data">
+										29</span
+									></span
+								>
+								<span
+									>mariages<span id="stl_mari" class="data">
+										42</span
+									></span
+								>
+								<span
+									>total<span id="stl_tot" class="data">
+										71</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="sedhiou" class="sedhiou city">
+						<p>
+							<span class="city_link">Sedhiou</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="sed_naiss" class="data">
+										29</span
+									></span
+								>
+								<span
+									>mariages<span id="sed_mari" class="data">
+										42</span
+									></span
+								>
+								<span
+									>total<span id="sed_tot" class="data">
+										71</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="tambacounda" class="tambacounda city">
+						<p>
+							<span class="city_link">Tambacounda</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="tam_naiss" class="data">
+										29</span
+									></span
+								>
+								<span
+									>mariages<span id="tam_mari" class="data">
+										42</span
+									></span
+								>
+								<span
+									>total<span id="tam_tot" class="data">
+										71</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="thies" class="thies city">
+						<p>
+							<span class="city_link">Thies</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="th_naiss" class="data">
+										29</span
+									></span
+								>
+								<span
+									>mariages<span id="th_mari" class="data">
+										42</span
+									></span
+								>
+								<span
+									>total<span id="th_tot" class="data"> 71</span></span
+								>
+							</span>
+						</p>
+					</div>
+					<div id="ziguinchor" class="ziguinchor city">
+						<p>
+							<span class="city_link">Ziguinchor</span>
+							<span class="subcity">
+								<span
+									>naissances<span id="zig_naiss" class="data">
+										29</span
+									></span
+								>
+								<span
+									>mariages<span id="zig_mari" class="data">
+										42</span
+									></span
+								>
+								<span
+									>total<span id="zig_tot" class="data">
+										71</span
+									></span
+								>
+							</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="connex_section" class="connex_section">
+			<div>
+				<button id="connex_popup_btn">
+						<img
+							class="lion_connect"
+							id="lion_connect"
+							src="icons/lion.svg"
+							alt=""
+						/>
+						<p>
+							<span class="vert">con</span>
+							<span class="jaune">nex</span>
+							<span class="rouge">ion</span>
+						</p>
+					</button>
+					<div id="connex_popup" class="popup">
+							<form id="connex_form" >
+					<input type="text" name="connex_name" class="connex_name text" id="connex_name" placeholder="Nom" required>
+					<input type="text" name="connex_surname"  class="connex_surname text" id="connex_name" placeholder="Prénom" required>		
+						<div class="radio">
+							<div > 
+						<label for="connex_sex">Homme</label>
+						<input type="radio" name="connex_sex" id="connex_sexm" required>
+							</div>
+							<div>
+						<label for="connex_sex">Femme</label>
+						<input type="radio" name="connex_sex" id="connex_sexf" required>
+							</div>
+					</div>	
+					<div class="date_format">
+						<p>Naissance</p>
+						<input type="date"  name="connex_naiss"  classe="connex_naiss" id="connex_naiss" required>	
+					</div>
+					<input type="text" name="connex_lnaiss" class="connex_lnaiss text" id="connex_lnaiss" placeholder="Lieu de Naissance"required>		
+					<input type="text" name="connex_dad" class="connex_dad text" id="connex_dad" placeholder="Nom du Père" required>		
+					<input type="text" name="connex_mom" class="connex_mom text" id="connex_mom"placeholder="Nom de la Mère" required>		
+					<input type="mail" name="connex_mail" class="connex_mail text" id="connex_mail" placeholder="Mail" required>
+					<div class="control_buttons">
+					<input type="submit" value="ENVOYER" class="submit" id="submit_connex">
+					<input type="button" value="FERMER" class="close" id="close_connex">
+					</div>
+				</form>
+					</div>
+				</div>
+				<div>
+					<img id="flag" class="flag" src="icons/flag.png" alt="" />
+				</div>
+			</div>
+		<div id="certificats" class="certificats back_fade_r">
+			<div class="certif_general" id="certif_general">
+				<button id="popup_naiss_btn">	<span class="vert">nai</span>
+							<span class="jaune">ssa</span>
+							<span class="rouge">nce</span></button>
+				<button id="popup_mari_btn">	<span class="vert">ma</span>
+							<span class="jaune">ria</span>
+							<span class="rouge">ge</span></button>
+				<button id="popup_dead_btn">	<span class="vert">de</span>
+							<span class="jaune">c</span>
+							<span class="rouge">es</span></button>
+			</div>
+			<div class="popup" id="popup_naiss">
+				<form id="naiss_form" >
+					<input type="text" name="user_surname" class="user_surname text" id="user_surname" placeholder="Prénom" required>
+					<input type="text" name="user_name"  class="user_name text" id="user_name" placeholder="Nom" required>		
+						<div class="radio">
+							<div > 
+						<label for="user_sex">Homme</label>
+						<input type="radio" name="user_sex" id="user_sexm" required>
+							</div>
+							<div>
+						<label for="user_sex">Femme</label>
+						<input type="radio" name="user_sex" id="user_sexf" required>
+
+							</div>
+					</div>	
+					<div class="date_format">
+						<p>Naissance</p>
+						<input type="date"  name="user_naiss"  classe="user_naiss" id="user_naiss" required>	
+
+					</div>
+					<input type="text" name="user_lnaiss"class="user_lnaiss text" id="user_lnaiss" placeholder="Lieu de Naissance"required>		
+					<input type="text" name="user_dad" class="user_dad text" id="user_dad" placeholder="Nom du Père" required>		
+					<input type="text" name="user_mom" class="user_mom text" id="user_mom"placeholder="Nom de la Mère" required>		
+					<input type="mail" name="user_mail" class="user_mail text" id="user_mail" placeholder="Mail" required>
+					<div class="control_buttons">
+					<input type="submit" value="ENVOYER" class="submit" id="submit_naiss">
+					<input type="button" value="FERMER" class="close" id="close_naiss">
+					</div>
+				</form>
+			</div>
+			<div class="popup" id="popup_mari">
+				<form id="mari_form">
+					<input type="text" name="user_mari" class="user_mari text" id="user_mari" placeholder="Mari" required>
+					<input type="text" name="user_femme"  class="user_femme text" id="user_femme" placeholder="Femme" required>		
+						<div class="radio">
+							<div > 
+						<label for="user_matri">Monogamme</label>
+						<input type="radio" name="user_matri" id="user_matrimo" required>
+							</div>
+							<div>
+						<label for="user_matri">Polygamme</label>
+						<input type="radio" name="user_matri" id="user_matripo" required>
+
+							</div>
+					</div>	
+					<div class="date_format">
+						<p>Date d'union</p>
+						<input type="date"  name="user_dmari"  classe="user_dmari" id="user_dmari" required>	
+
+					</div>
+					<input type="mail" name="user_recept" class="user_recept text" id="user_recept" placeholder="Mail" required>
+					<div class="control_buttons">
+					<input type="submit" value="ENVOYER" class="submit" id="submit_mari">
+					<input type="button" value="FERMER" class="close" id="close_mari">
+					</div>
+				</form>
+			</div>
+			<div class="popup" id="popup_dead">
+				<form id="dead_form">
+					<input type="text" name="user_dead_surname" class="user_dead_surname text" id="user_dead_surname" placeholder="Prénom" required>
+					<input type="text" name="user_dead_name"  class="user_dead_name text" id="user_dead_name" placeholder="Nom" required>		
+						<div class="radio">
+							<div > 
+						<label for="user_dead_sex">Homme</label>
+						<input type="radio" name="user_dead_sex id="user_dead_sexm" required>
+							</div>
+							<div>
+						<label for="user_dead_sex">Femme</label>
+						<input type="radio" name="user_dead_sex" id="user_dead_sexf" required>
+							</div>
+					</div>	
+					<div class="date_format">
+						<p>Date de décès</p>
+						<input type="date"  name="user_ddead"  classe="user_ddead" id="user_ddeces" required>	
+					</div>
+					<input type="text" name="user_ldead"class="user_ldead text" id="user_ldead" placeholder="Lieu de Décès"required>		
+							<div class="autopsie">
+						<label for="user_dead_autops">Autopsie</label>
+						<input type="checkbox" name="user_dead_autops" id="user_dead_autops">
+							</div>
+					<input type="mail" name="user_dead_recept" class="user_dead_recept text" id="user_dead_recept" placeholder="Mail" required>
+					<div class="control_buttons">
+					<input type="submit" value="ENVOYER" class="submit" id="submit_dead">
+					<input type="button" value="FERMER" class="close" id="close_dead">
+					</div>
+				</form>
+				</div>
+
+		</div>
+		<div id="contact" class="contact back_fade_r">
+			<div class="contact_general" id="contact_general">
+				<form id="contact_form">
+					<p>CONTACT</p>
+					<input type="text" class="cont_surname text" id="cont_surname"name="cont_surname"  placeholder="Prénom" required>
+					<input type="text" class="cont_name text" id="cont_name" name="cont_name" placeholder="Nom" required>					
+					<input type="mail" class="cont_mail text" id="cont_mail" name="cont_mail" placeholder="Mail" required>
+					<textarea class="cont_message" id="cont_message" name="cont_message" placeholder="Votre message" required></textarea>
+					<input type="submit" value="ENVOYER" class="submit" onclick="sentMess()">
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	</body>
+
+	<script src="index.js"></script>
+</html>
